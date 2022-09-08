@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
 type TTodo = {
   text: string;
@@ -9,7 +9,7 @@ type TTodo = {
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<TTodo[]>([]);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const addTodo = () => {
     setTodos([
@@ -17,10 +17,10 @@ export const useTodos = () => {
       {
         text,
         date: new Date().toISOString(),
-        id: Math.random() + '',
+        id: Math.random() + "",
       },
     ]);
-    setText('');
+    setText("");
   };
 
   const deleteTodoById = (id: string) => {
@@ -38,7 +38,7 @@ export function Todo() {
       <label htmlFor="todo-text">Todo Text</label>
       <input
         value={text}
-        aria-label="cost-input"
+        aria-label="todo-text"
         id="todo-text"
         onChange={(e) => setText(e.target.value)}
       ></input>
